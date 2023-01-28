@@ -19,9 +19,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'prezime',
         'email',
         'password',
     ];
+    
+    public function prognoze()
+    {
+        return $this->hasMany(Prognoza::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
